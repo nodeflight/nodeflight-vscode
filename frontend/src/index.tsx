@@ -1,7 +1,8 @@
-function component() {
-  const element = document.createElement('div');
-  element.innerHTML = 'Hellorld!!!';
-  return element;
-}
+import { createRoot } from 'react-dom/client';
+import MyApp from './App';
 
-document.body.appendChild(component());
+import './style.css';
+
+// Render your React component instead
+const root = createRoot(document.getElementById('app'));
+root.render(<MyApp />);

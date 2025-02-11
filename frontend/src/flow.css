@@ -1,0 +1,38 @@
+.react-flow {
+    --xy-edge-stroke-default:                              var(--vscode-editor-foreground);
+    --xy-edge-stroke-width-default:                        1;
+    --xy-edge-stroke-selected-default:                     var(--vscode-focusBorder);
+
+    --xy-connectionline-stroke-default:                    #b1b1b7;
+    --xy-connectionline-stroke-width-default:              1;
+
+    --xy-attribution-background-color-default:             var(--vscode-editor-background);
+
+    --xy-minimap-background-color-default:                 var(--vscode-editor-background);
+
+    --xy-background-pattern-dots-color-default:            var(--vscode-editorRuler-foreground);
+    --xy-background-pattern-line-color-default:            var(--vscode-editorRuler-foreground);
+    --xy-background-pattern-cross-color-default:           var(--vscode-editorRuler-foreground);
+
+    --xy-node-color-default:                               var(--vscode-input-foreground);
+    --xy-node-border-default:                              1px solid var(--vscode-input-border);
+    --xy-node-background-color-default:                    var(--vscode-input-background);
+    --xy-node-group-background-color-default:              rgba(240, 240, 240, 0.25);
+    --xy-node-boxshadow-hover-default:                     0 0 0 0 rgba(0, 0, 0, 0);
+    --xy-node-boxshadow-selected-default:                  0 0 0 0 rgba(0, 0, 0, 0);
+
+    --xy-handle-background-color-default:                  var(--vscode-button-background);
+    --xy-handle-border-color-default:                      var(--vscode-button-border);
+
+    --xy-selection-background-color-default:               rgba(0, 89, 220, 0.08);
+    --xy-selection-border-default:                         1px dotted rgba(0, 89, 220, 0.8);
+
+    --xy-controls-button-background-color-default:         var(--vscode-menu-background);
+    --xy-controls-button-background-color-hover-default:   var(--vscode-menu-selectionBackground);
+    --xy-controls-button-color-default:                    var(--vscode-menu-foreground);
+    --xy-controls-button-color-hover-default:              var(--vscode-menu-selectionForeground);
+    --xy-controls-button-border-color-default:             var(--vscode-menu-border);
+    --xy-controls-box-shadow-default:                      0 0 0 0 rgba(0, 0, 0, 0);
+
+    --xy-resize-background-color-default:                  #3367d9;
+}

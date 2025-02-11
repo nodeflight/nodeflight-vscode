@@ -69,16 +69,13 @@ export class NfNodesEditorProvider implements vscode.CustomTextEditorProvider {
 				<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src ${webview.cspSource}; style-src ${webview.cspSource}; script-src 'nonce-${nonce}';">
 
 				<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--
-				<link href="${webviewUri('reset.css')}" rel="stylesheet" />
-				<link href="${webviewUri('vscode.css')}" rel="stylesheet" />
-				<link href="${webviewUri('catScratch.css')}" rel="stylesheet" />
--->
-				<title>Cat Scratch</title>
+
+				<title>NodeFlight Editor</title>
+				<link href="${webviewUri('style.css')}" rel="stylesheet" />
 			</head>
 			<body>
-				<div class="app">
-                    Loading...
+				<div id="app">
+                    Test...
 				</div>
 				<script nonce="${nonce}" src="${webviewUri('index.js')}"></script>
 			</body>
