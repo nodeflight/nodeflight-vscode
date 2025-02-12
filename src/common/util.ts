@@ -8,3 +8,14 @@ export function getNonce() {
 	}
 	return text;
 }
+
+export function debounce(func: CallableFunction, delay: number) {
+	let timer: NodeJS.Timeout | undefined = undefined;
+	return function (...args: any[]) {
+		clearTimeout(timer);
+		timer = setTimeout(() => { func(...args); }, delay);
+	};
+}
+
+
+
