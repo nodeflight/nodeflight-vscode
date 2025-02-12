@@ -31,14 +31,10 @@
     ]
   },
   "scripts": {
-    "install:all": "npm install && cd frontend && npm install",
-    "start:webview": "cd frontend && npm run start",
-    "build:webview": "cd frontend && npm run build",
+    "install:all": "npm install",
     "vscode:prepublish": "npm run compile",
-    "compile:webview": "cd frontend && npm run compile",
-    "watch:webview": "cd frontend && npm run watch",
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
+    "compile": "webpack --config build/webpack/prod.config.js",
+    "watch": "webpack --config build/webpack/watch.config.js",
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src",
     "test": "vscode-test"
@@ -46,12 +42,22 @@
   "devDependencies": {
     "@types/mocha": "^10.0.9",
     "@types/node": "20.x",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
     "@types/vscode": "^1.95.0",
     "@typescript-eslint/eslint-plugin": "^8.10.0",
     "@typescript-eslint/parser": "^8.7.0",
     "@vscode/test-cli": "^0.0.10",
     "@vscode/test-electron": "^2.4.1",
+    "@xyflow/react": "^12.4.3",
+    "css-loader": "^7.1.2",
     "eslint": "^9.13.0",
-    "typescript": "^5.6.3"
+    "mini-css-extract-plugin": "^2.9.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.6.3",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1"
   }
 }

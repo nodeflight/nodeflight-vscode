@@ -1,10 +1,11 @@
 {
     "compilerOptions": {
-        "outDir": "./dist/",
-        "noImplicitAny": true,
-        "module": "es6",
+        "module": "commonjs",
         "target": "es5",
         "jsx": "react-jsx",
+        "rootDir": "../../src",
+        "outDir": "../../out",
+        "noImplicitAny": true,
         "allowJs": true,
         "moduleResolution": "node",
         "plugins": [
@@ -12,5 +13,9 @@
                 "name": "typescript-plugin-css-modules"
             }
         ]
-    }
+    },
+    "include": [
+        "../../src/frontend/**/*",
+        "../../src/common/**/*"
+    ]
 }

@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
 
-import { XmlDocument } from './utils/XmlDocument';
-import { getNonce } from './utils/util';
+import { XmlDocument } from '../common/XmlDocument';
+import { getNonce } from '../common/util';
 
 export class NfNodesEditorProvider implements vscode.CustomTextEditorProvider {
     public static register(context: vscode.ExtensionContext): vscode.Disposable {
@@ -47,7 +47,7 @@ export class NfNodesEditorProvider implements vscode.CustomTextEditorProvider {
         const webviewUri = (...name: Array<string>) => {
             const uri = webview.asWebviewUri(
                 vscode.Uri.joinPath(
-                    this.context.extensionUri, 'out', 'frontend', ...name
+                    this.context.extensionUri, 'out', ...name
                 )
             );
             console.log(uri);
@@ -71,13 +71,13 @@ export class NfNodesEditorProvider implements vscode.CustomTextEditorProvider {
 				<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 				<title>NodeFlight Editor</title>
-				<link href="${webviewUri('style.css')}" rel="stylesheet" />
+				<link href="${webviewUri('frontend.css')}" rel="stylesheet" />
 			</head>
 			<body>
 				<div id="app">
-                    Test...
+                    Loading...
 				</div>
-				<script nonce="${nonce}" src="${webviewUri('index.js')}"></script>
+				<script nonce="${nonce}" src="${webviewUri('frontend.js')}"></script>
 			</body>
 			</html>`;
     }

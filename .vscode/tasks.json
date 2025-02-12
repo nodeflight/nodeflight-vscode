@@ -15,22 +15,6 @@
 				"kind": "build",
 				"isDefault": true
 			}
-		},
-		{
-			"options": {
-				"cwd": "frontend"
-			},
-			"type": "npm",
-			"script": "watch",
-			"problemMatcher": "$tsc-watch",
-			"isBackground": true,
-			"presentation": {
-				"reveal": "never"
-			},
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			}
 		}
 	]
 }
