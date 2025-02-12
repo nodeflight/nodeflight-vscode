@@ -6,7 +6,9 @@
 		{
 			"type": "npm",
 			"script": "watch",
-			"problemMatcher": "$tsc-watch",
+			// Requires:
+			// https://marketplace.visualstudio.com/items?itemName=amodio.tsl-problem-matcher
+			"problemMatcher": "$ts-webpack-watch",
 			"isBackground": true,
 			"presentation": {
 				"reveal": "never"
