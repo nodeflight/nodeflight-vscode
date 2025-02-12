@@ -8,10 +8,10 @@ export class XmlDocument implements vscode.Disposable {
         this.document = document;
 
         this.changeDocumentSubscription = vscode.workspace.onDidChangeTextDocument(e => {
-            if (e.document.uri.toString() == this.document.uri.toString()) {
+            if (e.document.uri.toString() === this.document.uri.toString()) {
                 this.handleChange(e);
             }
-        })
+        });
     }
 
     dispose() {

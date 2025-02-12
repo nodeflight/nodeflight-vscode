@@ -31,7 +31,6 @@
     ]
   },
   "scripts": {
-    "install:all": "npm install",
     "vscode:prepublish": "npm run compile",
     "compile": "webpack --config build/webpack/prod.config.js",
     "watch": "webpack --config build/webpack/watch.config.js",
