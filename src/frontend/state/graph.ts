@@ -11,18 +11,20 @@ import {
     type Connection,
 } from "@xyflow/react";
 
-interface GraphState {
+export interface GraphState {
     nodes: Node[],
     edges: Edge[]
 };
 
 
 const initialNodes: Node[] = [
-    { id: '1', data: { label: 'Node 1' }, position: { x: 5, y: 5 } },
-    { id: '2', data: { label: 'Node 2' }, position: { x: 5, y: 100 } },
+    //    { id: '1', data: { label: 'Node 1' }, position: { x: 5, y: 5 } },
+    //    { id: '2', data: { label: 'Node 2' }, position: { x: 5, y: 100 } },
 ];
 
-const initialEdges: Edge[] = [{ id: 'e1-2', source: '1', target: '2' }];
+const initialEdges: Edge[] = [
+    //    { id: 'e1-2', source: '1', target: '2' }
+];
 
 export const graphSlice = createSlice({
     name: 'graph',
@@ -39,6 +41,10 @@ export const graphSlice = createSlice({
         },
         graphConnect: (state: GraphState, action: PayloadAction<Connection>) => {
             state.edges = addEdge(action.payload, state.edges);
+        },
+        setGraph: (state: GraphState, action: PayloadAction<GraphState>) => {
+            state.nodes = action.payload.nodes;
+            state.edges = action.payload.edges;
         }
     }
 });
@@ -46,6 +52,7 @@ export const graphSlice = createSlice({
 export const {
     graphNodeChanges,
     graphEdgeChanges,
-    graphConnect
+    graphConnect,
+    setGraph,
 } = graphSlice.actions;
 export default graphSlice.reducer;

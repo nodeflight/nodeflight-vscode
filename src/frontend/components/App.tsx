@@ -3,6 +3,7 @@ import {
     ReactFlow,
     Background,
     BackgroundVariant,
+    Controls,
     type Node,
     type Edge,
     type Viewport,
@@ -13,7 +14,6 @@ import {
 
 import '@xyflow/react/dist/style.css';
 
-import { debounce } from '../../common/util';
 import { useAppDispatch, useAppSelector } from '../state/hooks';
 
 import {
@@ -64,6 +64,7 @@ export default function MyApp() {
             viewport={viewportObj}
         >
             <Background variant={BackgroundVariant.Dots} />
+            <Controls />
         </ReactFlow>
     );
 }

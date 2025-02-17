@@ -31,22 +31,39 @@ export class NfNodesEditorProvider implements vscode.CustomTextEditorProvider {
 
         //webviewPanel.webview.html = '<h1>test</h1>';
 
-        webviewPanel.webview.postMessage({
-            type: 'update',
-            text: document.getText(),
-        });
-
         webviewPanel.webview.options = {
             enableScripts: true
         };
         webviewPanel.webview.html = this.getHtmlForWebview(webviewPanel.webview);
         webviewPanel.webview.onDidReceiveMessage(
-            message => this.handleMessage(document, message)
+            message => this.handleMessage(xmlDocument, message, webviewPanel)
         );
+
+        webviewPanel.webview.postMessage({
+            type: 'update',
+            text: document.getText(),
+        });
     }
 
-    private handleMessage(document: vscode.TextDocument, message: object) {
+    private handleMessage(document: XmlDocument, message: any, webviewPanel: vscode.WebviewPanel) {
         console.log("message", message);
+        if (message.type === 'graph/load') {
+            console.log('call load');
+            webviewPanel.webview.postMessage({
+                type: 'graph/update',
+                graph: document.graph || {
+                    nodes: [
+                        { id: '1', data: { label: 'Node 1' }, position: { x: 5, y: 5 } },
+                        { id: '2', data: { label: 'Node 2' }, position: { x: 5, y: 100 } },
+                    ],
+                    edges: [
+                        { id: 'e1-2', source: '1', target: '2' }
+                    ]
+                },
+            });
+        } else if (message.type === 'graph/save') {
+            document.graph = message.graph;
+        }
     }
 
     private getHtmlForWebview(webview: vscode.Webview): string {

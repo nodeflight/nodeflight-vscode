@@ -2,16 +2,14 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 
-import vscode from './vscodeWrapper';
-
 import MyApp from './components/App';
-import { store } from './state/store';
+import { store, observeStore } from './state/store';
+import { connectBackend } from './backend_link';
 
 import './style/style.css';
 import './style/flow.css';
 
-// Request update of document content
-vscode.postMessage({ type: 'sync' });
+connectBackend(store.dispatch);
 
 // Render your React component instead
 const appNode = document.getElementById('app') as HTMLElement;

@@ -1,6 +1,8 @@
 import * as vscode from 'vscode';
 
 export class XmlDocument implements vscode.Disposable {
+    graph: any = undefined;
+
     constructor(
         document: vscode.TextDocument
     ) {
