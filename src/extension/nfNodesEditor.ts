@@ -40,10 +40,12 @@ export class NfNodesEditorProvider implements vscode.CustomTextEditorProvider {
             enableScripts: true
         };
         webviewPanel.webview.html = this.getHtmlForWebview(webviewPanel.webview);
-        webviewPanel.webview.onDidReceiveMessage(this.handleMessage);
+        webviewPanel.webview.onDidReceiveMessage(
+            message => this.handleMessage(document, message)
+        );
     }
 
-    private handleMessage(message: object) {
+    private handleMessage(document: vscode.TextDocument, message: object) {
         console.log("message", message);
     }
 
